@@ -5,12 +5,6 @@ import "math"
 const REVISED_MAGNUS_BETA = 17.625
 const REVISED_MAGNUS_LAMBDA = 243.04
 
-// vaporPressure can be actual or saturated
-func CalculateMixingRatio(stationPressure float64, vaporPressure float64) float64 {
-	result := 621.97 * vaporPressure / (stationPressure - vaporPressure)
-	return result
-}
-
 func CalculateDewPoint(temperatureInCelsius float64, relativeHumidityPercentage float64) float64 {
 
 	a := math.Log(relativeHumidityPercentage / 100)
@@ -40,5 +34,11 @@ func CalculateRelativeHumidity(temperatureInCelsius float64, dewpointInCelsius f
 // degreesInCelsius can be temperature or dewpoint
 func CalculateVaporPressure(degreesInCelsius float64) float64 {
 	result := 6.11 * math.Pow(10, 7.5*degreesInCelsius/(237.7+degreesInCelsius))
+	return result
+}
+
+// vaporPressure can be actual or saturated
+func CalculateMixingRatio(stationPressure float64, vaporPressure float64) float64 {
+	result := 621.97 * vaporPressure / (stationPressure - vaporPressure)
 	return result
 }
