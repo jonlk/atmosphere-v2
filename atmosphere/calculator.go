@@ -1,3 +1,5 @@
+// Using the Magnus coefficients for meteorology and climatology
+// [Clausius–Clapeyron relation] https://en.wikipedia.org/wiki/Clausius%E2%80%93Clapeyron_relation#Meteorology_and_climatology
 package atmosphere
 
 import "math"
